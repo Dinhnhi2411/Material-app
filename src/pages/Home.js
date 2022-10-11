@@ -5,6 +5,14 @@ import api from '../data/fetchData';
 import CardList from '../components/CardList';
 import { useSearchParams } from 'react-router-dom';
 import { Typography } from '@mui/material';
+import Pagination from "@mui/material/Pagination";
+import { styled } from "@mui/material/styles";
+
+const PaginationJob = styled(Pagination)(()=>({
+  ul: {
+    justifyContent: "center",
+  },
+}));
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -39,7 +47,7 @@ function Home() {
       </Grid>
     ))}
     </Grid>
-    <Container
+    <PaginationJob
     sx={{ marginTop:"15px"}}
     count={pageTotal}
     color="primary"
