@@ -32,7 +32,7 @@ function Home() {
   },[page, q]);
  
   return (
-    <Container>
+    <Container sx={{p:3}} maxWidth="lg">
       {jobs.length > 0 ? (
         <>
     <Grid container spacing={2} mt={2}>
@@ -48,10 +48,11 @@ function Home() {
     ))}
     </Grid>
     <PaginationJob
+    width= '100%'
+    id="pagina"
     sx={{ marginTop:"15px"}}
     count={pageTotal}
     color="primary"
-   
     onChange={(e, value)=>{
       setPage(value)
       

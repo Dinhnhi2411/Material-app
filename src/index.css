@@ -12,3 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#light {
+  --background-color:  #f3ebf6;
+  --text-primary:black;
+  --text-secondary:royalblue;
+  --accent: purple;
+
+}
+#dark {
+  --background-color: #14021b;
+  --text-primary:white;
+  --text-secondary:grey;
+  --accent:darkred;
+} 
+
+#pagina {
+  color: var(--background-color);
+  background-color: var(--text-secondary);
+}

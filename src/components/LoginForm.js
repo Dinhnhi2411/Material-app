@@ -22,7 +22,7 @@ const style = {
   borderRadius: "5px",
 };
 
-function LoginForm({ callback }) {
+function LoginForm({ callback}) {
   const [username] = useState("dinhnhi");
   const [password] = useState("dinhnhi99");
 
@@ -33,12 +33,15 @@ function LoginForm({ callback }) {
     event.preventDefault();
   };
   const handleLogin = () => {
+   
     auth.singin(username, callback);
-  };
+   
 
+  };
+  
   return (
     <Box sx={style} component="form" gap={4}>
-      <Typography variant="h4" component="span">
+      <Typography color="secondary" variant="h4" component="span" textAlign="center">
         Login
       </Typography>
       <TextField

@@ -4,11 +4,15 @@ import { Outlet} from "react-router-dom";
 import SearchAppBar from "../components/SearchAppBar";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
+import Switch from "@mui/material/Switch";
+
+
 
 
 
 export const ThemeContext = createContext(null);
 function Layout() {
+
   const [theme, setTheme] = useState("dark");
   const toggleTheme = ()=>{
     setTheme((curr)=>(curr ==="light" ? "dark" : "light"));
@@ -23,11 +27,12 @@ function Layout() {
     >
     <span className="switch">
       <label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
-      <label><input type="checkbox" onChange={toggleTheme} checked={theme === "dark"} /></label> 
+      <Switch type="checkbox" onChange={toggleTheme} checked={theme === "dark"} />
         </span>
      <SearchAppBar/>
       <Outlet />
       <Box sx={{ flexGrow: 1 }} />
+      
     </Stack>
     </ThemeContext.Provider>
   );

@@ -8,6 +8,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import api from "../data/fetchData";
 import SkillsPaper from "./SkillsPaper";
 
+
+const wrapper = {
+  
+  position: "absolute",
+  top:"50%",
+  left:"50%",
+  transform:"translate(-50%, -50%)",
+  width: { xs:"50%", md:700, },
+  bgcolor:"background,paper",
+  borderRadius:2,
+  border:"none",
+  
+};
 function DetailListModal(){
     const {id} = useParams();
     const [job, setJob] = useState(null);
@@ -33,13 +46,13 @@ function DetailListModal(){
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Box>
+          <Box sx={wrapper}>
             <Card
               sx={{
                 border: "none",
                 boxShadow: 0,
-                backgroundColor: (theme) => theme.palette.primary.light,
-                color: (theme) => theme.palette.common.white,
+                backgroundColor: "#FFF",
+                color:"secondary",
               }}
             >
               <CardContent>

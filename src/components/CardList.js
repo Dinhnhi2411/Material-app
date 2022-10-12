@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
 // import AuthContext from '../authen/AuthContext';
 import {useLocation, Link} from 'react-router-dom';
@@ -16,7 +17,7 @@ const CardStyle = styled(Card)(() => ({
   boxShadow: "none",
   border: "1px solid black",
   width: "100%",
-  maxWidth: "500px",
+  maxWidth: "400px",
   minWidth: "270px",
   height: "100%",
   margin: "auto",
@@ -32,9 +33,16 @@ export default function CardList({title, skills, id, description}) {
   return (
     
     <CardStyle ariant="outlined">
-    <Card sx={{ minWidth: 275 }}>
+  
+      <Stack 
+      direction="column"
+      justifyContent="space-between"
+      alignItems="center"
+      height="100%"
+      padding="5px"
+      >
       <CardContent >
-        <Typography  color="red" variant="h5" gutterBottom >
+        <Typography  color="orange" variant="h5" gutterBottom >
         {title}
         </Typography>
         
@@ -54,11 +62,13 @@ export default function CardList({title, skills, id, description}) {
         component={Link}
         to={`/job/${id}`}
         state={{backgroundLocation: location}}
+        sx={{width: "130px", backgroundColor:"#00404D"}}
         >
           Learn More
         </Button>
       </CardActions>
-    </Card>
+      </Stack>
+  
     </CardStyle>
   );
 }

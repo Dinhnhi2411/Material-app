@@ -2,6 +2,7 @@ import React,{ useContext } from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Avatar from "@mui/material/Avatar";
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -12,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import AuthContext from '../authen/AuthContext';
+
 import { useSearchParams, useNavigate} from 'react-router-dom';
 
 
@@ -99,6 +101,9 @@ export default function SearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography
+            onClick={()=>{
+              navigate("/")
+            }}
             variant="h6"
             noWrap
             component="span"
@@ -127,12 +132,20 @@ export default function SearchAppBar() {
            
           <Button color="inherit" margin="10px"
           onClick={handleClickLogout}
+          variant="contained"
           startIcon={<LogoutIcon/>}
           >
             Logout
           </Button>
+          
+          <Avatar
+          src="./avt.jpg"
+          alt="avt"
+          sx={{width:40, height:40, ml:1}}
+          />
+         
+        
           </>
-
           ):(
           <Button
           onClick={handleClickLogin}
